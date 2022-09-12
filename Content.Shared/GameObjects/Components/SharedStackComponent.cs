@@ -127,6 +127,7 @@ namespace Content.Shared.GameObjects.Components
         Wood,
         MVCable,
         HVCable,
+        NetCable,
         Gold,
         Phoron,
         Ointment,

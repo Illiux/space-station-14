@@ -104,3 +104,32 @@
       size: 3
     - type: Stack
       count: 1
+
+- type: entity
+  parent: CableStack
+  id: NetCableStack
+  name: Networking cable coil
+  suffix: Full
+  components:
+    - type: Stack
+      stacktype: enum.StackType.NetCable
+    - type: Sprite
+      state: coilnet-30
+    - type: Item
+      size: 10
+      HeldPrefix: coilnet
+    - type: WirePlacer
+      wirePrototypeID: NetCable
+      blockingWireType: Networking
+
+- type: entity
+  parent: NetCableStack
+  id: NetCableStack1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: coilnet-10
+    - type: Item
+      state: 3
+    - type: Stack
+      count: 1

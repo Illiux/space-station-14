@@ -231,6 +231,33 @@
           1
         ]
       ]
+    },
+    {
+      "name": "coilnet-30",
+      "directions": 1,
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "coilnet-20",
+      "directions": 1,
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "coilnet-10",
+      "directions": 1,
+      "delays": [
+        [
+          1
+        ]
+      ]
     }
   ]
 }

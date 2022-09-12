@@ -13,16 +13,10 @@ namespace Content.Server.GameObjects.EntitySystems
     {
         public override void Update(float frameTime)
         {
-            var uniqueApcNets = new HashSet<IApcNet>(); //could be improved by maintaining set instead of getting collection every frame
             foreach (var apc in ComponentManager.EntityQuery<ApcComponent>(false))
             {
-                uniqueApcNets.Add(apc.Net);
+                apc.Net.Update(frameTime);
                 apc.Update();
-            }
-
-            foreach (var apcNet in uniqueApcNets)
-            {
-                apcNet.Update(frameTime);
             }
         }
     }

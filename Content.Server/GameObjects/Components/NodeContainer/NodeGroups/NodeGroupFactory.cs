@@ -64,6 +64,7 @@
         Apc,
         AMEngine,
         Pipe,
-        WireNet
+        WireNet,
+        UnifiedNet
     }
 }

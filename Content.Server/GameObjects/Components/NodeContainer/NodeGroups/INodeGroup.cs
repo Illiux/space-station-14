@@ -25,7 +25,7 @@ namespace Content.Server.GameObjects.Components.NodeContainer.NodeGroups
         void RemakeGroup();
     }
 
-    [NodeGroup(NodeGroupID.Default, NodeGroupID.WireNet)]
+    [NodeGroup(NodeGroupID.Default, NodeGroupID.WireNet, NodeGroupID.UnifiedNet)]
     public class BaseNodeGroup : INodeGroup
     {
         [ViewVariables]
@@ -94,7 +94,7 @@ namespace Content.Server.GameObjects.Components.NodeContainer.NodeGroups
         }
 
         protected virtual void OnAddNode(Node node) { }
-        
+
         protected virtual void OnRemoveNode(Node node) { }
 
         protected virtual void OnGivingNodesForCombine(INodeGroup newGroup) { }

@@ -38,6 +38,7 @@ namespace Content.Server.GameObjects.Components.NodeContainer.NodeGroups
         [ViewVariables]
         public bool Powered { get => _powered; private set => SetPowered(value); }
         private bool _powered = false;
+        private float _lastFrameTime = 0;
 
         //Debug property
         [ViewVariables]
@@ -100,6 +101,9 @@ namespace Content.Server.GameObjects.Components.NodeContainer.NodeGroups
 
         public void Update(float frameTime)
         {
+            if (_lastFrameTime >= frameTime) return;
+            _lastFrameTime = frameTime;
+
             var remainingPowerNeeded = TotalPowerReceiverLoad * frameTime;
 
             foreach (var apcBatteryPair in _apcBatteries)

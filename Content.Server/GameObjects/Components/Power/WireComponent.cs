@@ -55,5 +55,6 @@ namespace Content.Server.GameObjects.Components.Power
         HighVoltage,
         MediumVoltage,
         Apc,
+        Networking
     }
 }

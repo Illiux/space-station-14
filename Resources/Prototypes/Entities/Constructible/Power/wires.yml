@@ -138,3 +138,39 @@
               max: 1
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+
+- type: entity
+  parent: WireBase
+  id: NetCable
+  name: Networking Cable
+  description: A high-speed networking cable for general purpose data transfer.
+  components:
+  - type: Sprite
+    color: RoyalBlue
+    sprite: Constructible/Power/net_cable.rsi
+    state: netcable_0
+  - type: Icon
+    color: RoyalBlue
+    sprite: Constructible/Power/net_cable.rsi
+    state: netcable_4
+  - type: IconSmooth
+    base: netcable_
+    key: net_cables
+  - type: NodeContainer
+    nodes:
+      - !type:AdjacentNode
+        nodeGroupID: UnifiedNet
+  - type: Wire
+    wireDroppedOnCutPrototype: NetCableStack1
+    wireType: Networking
+  - type: Destructible
+    thresholds:
+      100:
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            NetCableStack1:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
