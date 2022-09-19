@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "illiux",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "flask"
+        },
+        {
+            "name": "fill1"
+        },
+        {
+            "name": "fill2"
+        },
+        {
+            "name": "fill3"
+        },
+        {
+            "name": "fill4"
+        },
+        {
+            "name": "fill5"
+        },
+        {
+            "name": "fill6"
+        },
+        {
+            "name": "fill7"
+        },
+        {
+            "name": "fill8"
+        }
+    ]
+}

@@ -238,6 +238,9 @@
   id: GlassBeaker
 
 - type: Tag
+  id: GlassFlask
+
+- type: Tag
   id: Grenade
 
 - type: Tag
@@ -506,4 +509,3 @@
 
 - type: Tag
   id: Write
-

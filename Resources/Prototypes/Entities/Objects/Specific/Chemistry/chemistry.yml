@@ -1,21 +1,8 @@
 - type: entity
   parent: BaseItem
-  id: BaseBeaker
+  id: BaseGlassware
   abstract: true
   components:
-  - type: Tag
-    tags:
-    - GlassBeaker
-  - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker.rsi
-    netsync: false
-    layers:
-      - state: beaker
-      - state: beaker1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
-  - type: Item
-    sprite: Objects/Specific/Chemistry/beaker.rsi
   - type: SolutionContainerManager
     solutions:
       beaker:
@@ -30,20 +17,8 @@
     solution: beaker
   - type: DrawableSolution
     solution: beaker
-  - type: InjectableSolution
-    solution: beaker
-  - type: SolutionTransfer
-    canChangeTransferAmount: true
-  - type: UserInterface
-    interfaces:
-    - key: enum.TransferAmountUiKey.Key
-      type: TransferAmountBoundUserInterface
   - type: Drink
     isOpen: true
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 6
-    fillBaseName: beaker
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -80,6 +55,37 @@
         Blunt: 5
   - type: StaticPrice
     price: 30
+
+- type: entity
+  id: BaseBeaker
+  parent: BaseGlassware
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - GlassBeaker
+  - type: InjectableSolution
+    solution: beaker
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    netsync: false
+    layers:
+    - state: beaker
+    - state: beaker1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Item
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beaker
+  - type: UserInterface
+    interfaces:
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
 
 - type: entity
   name: beaker
@@ -311,3 +317,32 @@
     whitelist:
       tags:
         - Pill
+
+- type: entity
+  id: FlaskBoiling
+  parent: BaseGlassware
+  name: boiling flask
+  components:
+  - type: Tag
+    tags:
+    - GlassFlask
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 80
+  - type: SolutionTransfer
+    transferAmount: 20
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/flask_boiling.rsi
+    netsync: false
+    layers:
+    - state: flask
+    - state: fill1
+      visible: false
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Item
+    sprite: Objects/Specific/Chemistry/flask_boiling.rsi
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 8
+    fillBaseName: fill
