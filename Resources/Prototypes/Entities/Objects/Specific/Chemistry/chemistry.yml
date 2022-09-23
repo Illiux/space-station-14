@@ -322,6 +322,7 @@
   id: FlaskBoiling
   parent: BaseGlassware
   name: boiling flask
+  description: Used to heat a solution and capture the resulting gases.
   components:
   - type: Tag
     tags:

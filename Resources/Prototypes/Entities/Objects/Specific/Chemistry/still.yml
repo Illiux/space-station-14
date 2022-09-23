@@ -1,0 +1,56 @@
+- type: entity
+  id: ChemistryStill
+  parent: BaseItem
+  name: Distillation Apparatus
+  description: A hotplate with a condenser mounted over it, used to separate chemicals.
+  components:
+  - type: Still
+  - type: Item
+    sprite: Objects/Specific/Chemistry/still.rsi
+    size: 31
+  - type: ContainerContainer
+    containers:
+      inputSlot: !type:ContainerSlot
+      outputSlot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      outputSlot:
+        ejectOnInteract: true
+        priority: 2
+        whitelist:
+          tags:
+          - GlassBeaker
+      inputSlot:
+        ejectOnInteract: true
+        whitelist:
+          tags:
+          - GlassFlask
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StillVisuals.Output:
+        enum.StillVisualizerLayers.Output:
+          True: { visible: true }
+          False: { visible: false }
+      enum.StillVisuals.Input:
+        enum.StillVisualizerLayers.Input:
+          True: { visible: true }
+          False: { visible: false }
+      enum.StillVisuals.Powered:
+        enum.StillVisualizerLayers.BaseUnlit:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Sprite
+    netsync: false
+    sprite: Objects/Specific/Chemistry/still.rsi
+    layers:
+    - state: flame
+      shader: unshaded
+      map: ["enum.StillVisualizerLayers.BaseUnlit"]
+    - state: output_beaker
+      visible: false
+      map: ["enum.StillVisualizerLayers.Output"]
+    - state: distillation_base
+    - state: input_flask
+      visible: false
+      map: ["enum.StillVisualizerLayers.Input"]
